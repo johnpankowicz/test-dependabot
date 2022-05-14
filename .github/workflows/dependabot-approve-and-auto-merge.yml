@@ -17,14 +17,14 @@ jobs:
       # This first step will fail if there's no metadata and so the approval
       # will not occur.
       - name: Dependabot metadata
-        run: console.log("In 1st step")
+        run: echo 'In 1st step'
         # id: dependabot-metadata
         # uses: dependabot/fetch-metadata@v1.1.1
         # with:
         #   github-token: "${{ secrets.GITHUB_TOKEN }}"
       # Here the PR gets approved.
       - name: Approve a PR
-        run: console.log("In 2nd step")
+        run: echo 'In 2nd step'
         # run: gh pr review --approve "$PR_URL"
         # env:
         #   PR_URL: ${{ github.event.pull_request.html_url }}
@@ -32,7 +32,7 @@ jobs:
       # Finally, this sets the PR to allow auto-merging for patch and minor
       # updates if all checks pass
       - name: Enable auto-merge for Dependabot PRs
-        run: console.log("In 3rd step")
+        run: echo 'In 3rd step'
         # if: ${{ steps.dependabot-metadata.outputs.update-type != 'version-update:semver-major' }}
         # run: gh pr merge --auto --squash "$PR_URL"
         # env:
